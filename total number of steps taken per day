@@ -5,3 +5,7 @@ totalSteps <- aggregate(steps ~ date, activityData, FUN=sum)
 hist(totalSteps$steps,
      main = "Total Steps per Day",
      xlab = "Number of Steps")
+
+# Calculate and report the mean and median of total steps taken per day
+meanSteps <- mean(totalSteps$steps, na.rm = TRUE)
+medSteps <- median(totalSteps$steps, na.rm = TRUE)
