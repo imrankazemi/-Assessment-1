@@ -17,3 +17,9 @@ impStepsByInt <- aggregate(steps ~ date, imp_activityData, FUN=sum)
 hist(impStepsByInt$steps,
      main = "Imputed Number of Steps Per Day",
      xlab = "Number of Steps")
+
+impMeanSteps <- mean(impStepsByInt$steps, na.rm = TRUE)
+impMedSteps <- median(impStepsByInt$steps, na.rm = TRUE)
+diffMean = impMeanSteps - meanSteps
+diffMed = impMedSteps - medSteps
+diffTotal = sum(impStepsByInt$steps) - sum(totalSteps$steps)
