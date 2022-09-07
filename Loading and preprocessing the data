@@ -1,0 +1,5 @@
+if (!file.exists('activity.csv')) {
+  unzip(zipfile = "activity.zip")
+}
+
+activityData <- read.csv(file="activity.csv", header=TRUE)
