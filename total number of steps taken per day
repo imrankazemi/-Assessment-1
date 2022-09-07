@@ -1,0 +1,7 @@
+# Calculate the total steps taken per day
+totalSteps <- aggregate(steps ~ date, activityData, FUN=sum)
+
+# Make a histogram of the total number of steps taken per day
+hist(totalSteps$steps,
+     main = "Total Steps per Day",
+     xlab = "Number of Steps")
